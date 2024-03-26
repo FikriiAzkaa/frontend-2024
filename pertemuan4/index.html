@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      //Ambil element id root
+      const container = document.getElementById("root");
+
+      //Buat root untuk menampung react
+      const root = ReactDOM.createRoot(container);
+
+      function Profile() {
+        return (
+          <div>
+            <h2>Iam Fikri Azka</h2>
+            <h3>Iam Madridista</h3>
+          </div>
+        );
+      }
+
+      function Header() {
+        return (
+          <nav>
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+        );
+      }
+
+      function Main() {
+        return <Profile />;
+      }
+
+      function Footer() {
+        return (
+          <footer>
+            <h2>Copyright @fasskaX</h2>
+            <p>Created by React.js</p>
+          </footer>
+        );
+      }
+
+      function App() {
+        return (
+          <div>
+            <Header />
+            <Main />
+            <Footer />
+          </div>
+        );
+      }
+
+      //render UI
+      root.render(<App />);
+    </script>
+  </body>
+</html>
