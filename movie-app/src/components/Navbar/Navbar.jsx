@@ -1,4 +1,5 @@
-import styles  from './styles.module.scss';
+import styles  from './Navbar.module.css';
+
 function Navbar() {
     return (
         <div className={styles.container}>
