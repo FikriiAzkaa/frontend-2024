@@ -1,28 +1,36 @@
-import styles from "./Hero.module.css"
+import { useEffect, useState } from "react";
 
 function Hero() {
-    return (
-        <div className={styles.container}>
-            <section className={styles.hero}>
-                <div className={styles.hero__left}>
-                    <h2 className={styles.hero__title}>Spider-Man: Far from Home</h2>
-                    <h3 className={styles.hero__genre}>
-                        Genre: Action, Adventure
-                    </h3>
-                    <p className={styles.hero__description}>
-                        2019
-                    </p>
-                    <button className={styles.hero__button}>Watch</button>
-                </div>
-                <div className={styles.hero__right}>
-                    <img 
-                        className={styles.hero__image}
-                        src="https://lsf.go.id/wp-content/uploads/2021/12/SPM.jpeg"
-                        alt="placeholder"
-                    />
-                </div>
-            </section>
-        </div>
-    );
+
+    const [movie, setMovie] = useState(" ");
+
+    useEffect(() => {
+        async function fetcmovie() {
+            const url = "https://www.omdbapi.com/?apikey=fcf50ae6&i=tt2975590";
+
+            const response = await fetch(url);
+            const data = await response.json();
+               
+            return(
+                    <section>
+                        <div>
+                            <h2>{movie.Title}</h2>
+                            <h3>Genre: {movie.Genre}</h3>
+                         </div>
+                         <div>
+                            <img src="{movie.Poster" alt="{movie.Title}" />
+                         </div>
+                    </section>
+                )
+
+            setMovie(data);
+        }
+        fetcmovie();
+    }, [])
 }
+
+
+ 
+
+
 export default Hero;
