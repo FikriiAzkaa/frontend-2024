@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./AddMovie.module.css";
+import styles from "./AddMovies.module.css";
 import { nanoid } from "nanoid";
 import Alert from "../Alert/Alert";
 
@@ -24,7 +24,7 @@ function AddMovies(props) {
 
   const { isTitleError, isDateError, isPosterError } = isDataError;
 
-  function addMovie() {
+  function AddMovies() {
     const movie = {
       id: nanoid(),
       title: title,

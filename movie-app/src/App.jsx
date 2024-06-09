@@ -5,6 +5,9 @@ import Popular from "./components/Pages/Movie/Popular";
 import NowPlaying from "./components/Pages/Movie/NowPlaying";
 import TopRated from "./components/Pages/Movie/TopRated";
 import Layout from "./components/Layout/Layout";
+import { ThemeProvider } from "styled-components";
+import theme from "./utils/constants/theme";
+import GlobalStyle from "./components/GlobalStyle";
 
 
 
@@ -12,6 +15,8 @@ import Layout from "./components/Layout/Layout";
  function App() {
       return (
     <>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
     <Layout>
     <Routes>
       <Route path="/" element={<Home />}></Route>
@@ -21,6 +26,7 @@ import Layout from "./components/Layout/Layout";
       <Route path="/Movie/Top" element={<TopRated/>} />
     </Routes>
     </Layout>
+    </ThemeProvider>
     </>
   );
 }

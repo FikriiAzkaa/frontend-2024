@@ -9,11 +9,11 @@ function Home() {
   const [ movies, setMovies ] = useState(data);
 
   return (
-    <div>
+    <>
       <Hero />
       <Movies movies={movies} setMovies={setMovies} />
       <AddMovies movies={movies} setMovies={setMovies} />
-    </div>
+    </>
   );
 }
 
