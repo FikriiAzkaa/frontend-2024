@@ -6,48 +6,72 @@ import styled from "styled-components";
 
 const StyledHero = styled.div`
     margin: 1rem;
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  div {
     margin-bottom: 1rem;
-    flex-basis: 60%
-    flex-basis: 40%
-    
-    section{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+  }
+  
+  h2 {
+    color: #4361ee;
+    margin-bottom: 1rem;
+    font-size: 2.44rem;
+  }
+  
+  h3 {
+    color: #0c010b;
+    margin-bottom: 1rem;
+    font-size: 1.59rem;
+  }
+  
+  p {
+    color: #000102;
+    margin-bottom: 1rem;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+  }
+  
+  /* Medium Screen */
+  @media (min-width: 768px) {
+    /*
+     * Nothing TODO Here.
+     * We dont change style Hero. 
+     */
+  }
+  
+  /* Large Screen */
+  @media (min-width: 992px) {
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
     }
-
-    h2{
-        color: #4361ee;
-        font-size: 2.44rem;
-        margin-bottom: 1rem;
+  
+    section {
+      margin: 0 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
     }
-
-    h3{
-        color: #b5179e;
-        font-size: 1.59rem;
-        margin-bottom: 1rem;
+  
+    div {
+      flex-basis: 40%;
     }
-
-    p{
-        color: #64748b;
-        margin-bottom: 1rem;
+  
+    div {
+      flex-basis: 60%;
     }
+  }
 
-
-    img{
-        max-width: 100%;
-        height: auto;
-        border-radius: 25px;
-    }
-
-    @media screen and (min-width: 768px) {
-        flex-basis: 50%;
-    }
-
-    @media screen and (min-width: 992px) {
-        flex-basis: 25%;
-        padding: 1rem;
-    }
 
 
     
@@ -82,9 +106,9 @@ useEffect(() => {
                     </p>
                     <Button variant="primary" full>Watch Movie</Button>
                 </div>
-                <div>
+                
                     <img src={movie.Poster} alt={movie.Title} />
-                </div>
+                
             </section>
         </StyledHero>
     );

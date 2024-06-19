@@ -40,7 +40,7 @@ function Movie(props) {
                 alt= {title}
                 />
             <h3>{title}</h3>
-            <p>{year}</p>
+            <p>{movie.year || movie.release_date}</p>
         </StyledMovie>
     );
 }
