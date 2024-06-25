@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledMovie = styled.div`
@@ -39,7 +40,9 @@ function Movie(props) {
                 src= {image}
                 alt= {title}
                 />
+            <Link to ={`/movie/${movie.id}`}>
             <h3>{title}</h3>
+            </Link>
             <p>{movie.year || movie.release_date}</p>
         </StyledMovie>
     );
